@@ -114,8 +114,11 @@ button {
 
 .button-image {
     width: 50px;
-    height: auto; /* Para mantener la proporción original */
+    height: auto;
     object-fit: contain;
+}
+
+.button-image:not(.geometric-heart) {
     animation: jump 0.5s infinite alternate; /* Agrega una animación de salto */
 }
 
@@ -207,6 +210,12 @@ button {
     }
 }
 
+#page1 .geometric-heart {
+    left: 40%;
+    position: absolute;
+    animation: fade-in 1s ease-in-out;
+}
+
 /** CSS contenido Page2 **/
 
 #page2 {
@@ -245,4 +254,9 @@ button {
 
 #page5>div {
     display: block;
+}
+
+#page6 {
+    background-image: url('img/card-page6.avif');
+    z-index: 6;
 }
