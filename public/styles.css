@@ -171,22 +171,40 @@ button {
 #page1 h1 {
     font-size: 4.9em;
     margin: 0px;
+    color: transparent;
+    opacity: 0;
+    animation: entradaTitulo 0.5s ease-out forwards;
 }
 
 #page1 h1:nth-child(1) {
+    transform: translateX(-30px);
+    animation-delay: 0.5s;
     color: #2f58a0;
 }
 
 #page1 h1:nth-child(2) {
+    transform: translateX(30px);
+    animation-delay: 0.5s;
     color: #a3c6db;
 }
 
 #page1 h1:nth-child(5) {
+    transform: translateX(-30px);
+    animation-delay: 1s;
     color: #7f98c4;
 }
 
 #page1 h1:nth-child(6) {
+    transform: translateX(30px);
+    animation-delay: 1s;
     color: #429acc;
+}
+
+@keyframes entradaTitulo {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /** CSS contenido Page2 **/
