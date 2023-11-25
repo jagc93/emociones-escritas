@@ -20,22 +20,23 @@ body {
 }
 
 .page {
+    padding: 20px;
+    margin: 10px;
     position: absolute;
+    width: 300px;
     height: 500px;
-    width: 400px;
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 600px;
+    animation: fade-in 1s ease-in-out;
     transition: transform 0.5s ease-in-out;
 }
 
-#page2 {
-    transform: translateX(100%);
-    z-index: 2; /* Asegura que la página 2 se superponga a la página 1 */
-}
-
-#page3 {
-    transform: translateX(100%);
-    z-index: 3; /* Asegura que la página 3 se superponga a la página 2 */
+.page:not(#page1) {
+    text-align: center;
 }
 
 button {
@@ -100,10 +101,10 @@ button {
         transform: translate(-50%, -50%) rotate(0deg);
     }
     50%, 75% {
-        transform: translate(-50%, -50%) rotate(-180deg); /* Ajustado a rotar en dirección contraria */
+        transform: translate(-50%, -50%) rotate(-180deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(-360deg); /* Ajustado a rotar en dirección contraria */
+        transform: translate(-50%, -50%) rotate(-360deg);
     }
 }
 
@@ -156,62 +157,74 @@ button {
 }
 
 /** CSS contenido Page1 **/
-
 #page1 {
-    text-align: center;
-    padding: 20px;
-    margin: 10px;
-    width: 300px;
-    height: 500px;
-    background-color: #fff;
-    background-image: url('img/card-girasol.jpg');
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    max-width: 600px;
-    animation: fade-in 1s ease-in-out;
+    background-image: url('img/card-title.jpeg');
     z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+#page1>div {
+    display: block;
+}
+
+#page1 h1 {
+    font-size: 4.9em;
+    margin: 0px;
+}
+
+#page1 h1:nth-child(1) {
+    color: #2f58a0;
+}
+
+#page1 h1:nth-child(2) {
+    color: #a3c6db;
+}
+
+#page1 h1:nth-child(5) {
+    color: #7f98c4;
+}
+
+#page1 h1:nth-child(6) {
+    color: #429acc;
 }
 
 /** CSS contenido Page2 **/
 
 #page2 {
-    text-align: center;
-    padding: 20px;
-    margin: 10px;
-    width: 300px;
-    height: 500px;
-    background-color: #fff;
-    background-image: url('img/card-rosas.jpeg');
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    max-width: 600px;
-    animation: fade-in 1s ease-in-out;
+    background-image: url('img/card-girasoles.jpg');
+    z-index: 2; /* Asegura que la página 2 se superponga a la página 1 */
 }
 
 /** CSS contenido Page3 **/
 
 #page3 {
-    text-align: center;
-    padding: 20px;
-    margin: 10px;
-    width: 300px;
-    height: 500px;
-    background-color: #fff;
-    background-image: url('img/card-lirios.jpeg');
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    max-width: 600px;
-    animation: fade-in 1s ease-in-out;
+    background-image: url('img/card-rosas.jpeg');
+    z-index: 3; /* Asegura que la página 3 se superponga a la página 2 */
 }
 
-#page3 p[style*="display: block"] {
+/** CSS contenido Page4 **/
+
+#page4 {
+    background-image: url('img/card-lirios.jpeg');
+    z-index: 4; /* Asegura que la página 4 se superponga a la página 3 */
+}
+
+#page4 p:not(.hide) {
     background-color: rgba(255, 255, 255, 0.6);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/** CSS contenido Page5 **/
+
+#page5 {
+    background-image: url('img/card-girasoles2.jpeg');
+    z-index: 5; /* Asegura que la página 5 se superponga a la página 4 */
+    display: flex;
+    align-items: center;
+}
+
+#page5>div {
+    display: block;
 }

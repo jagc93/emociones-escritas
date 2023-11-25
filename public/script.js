@@ -101,22 +101,24 @@ function volverPagina() {
 }
 
 /** Mostrar contenido de la pagina gradualmente */
-function mostrarSiguienteParrafo(page, current) {
-    document.querySelector(`#${page} .p${current}`).classList.remove('hide');
+function mostrarSiguienteParrafo() {
+    const pHide = document.querySelectorAll(`#page${currentPage} p:not(.hide)`);
+    const length = document.querySelectorAll(`#page${currentPage} p[class^="p"]`).length;
+    const current = pHide.length === 0 ? 1 : pHide.length + 1;
 
-    for (let i = current; i > 0; i--) {
-        document.querySelector(`#${page} .btn${i}`).classList.add('hide');
-    }
+    if (current > length) {
+        return;
+    } 
 
-    const totalItems = document.querySelectorAll(`#${page} p[class^="p"]`).length;
+    document.querySelector(`#page${currentPage} .p${current}`).classList.remove('hide');
     const reload = document.querySelector(`.reload-page`);
 
-    if (current < totalItems) {
-        document.querySelector(`#${page} .btn${current + 1}`).classList.remove('hide');
+    if (current < length) {
         if (!reload.classList.contains('hide')) {
             reload.classList.add('hide');
         }
     } else {
+        document.querySelector(`#page${currentPage} .btn`).classList.add('hide');
         if (reload.classList.contains('hide')) {
             reload.classList.remove('hide');
         }
@@ -130,7 +132,7 @@ function reloadPage() {
     if (visiblePage) {
         const items = visiblePage.querySelectorAll('p[class^="p"]:not(.hide)');
         items.forEach(item => item.classList.add('hide'));
-        visiblePage.querySelector(`.btn1`).classList.remove('hide');
+        visiblePage.querySelector(`.btn`).classList.remove('hide');
     }
     document.querySelector(`.reload-page`).classList.add('hide');
 }
