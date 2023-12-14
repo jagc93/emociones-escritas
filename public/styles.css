@@ -257,6 +257,12 @@ button {
 }
 
 #page6 {
-    background-image: url('img/card-page6.avif');
+    background-image: url('img/card-hortensias.jpg');
     z-index: 6;
+}
+
+#page6 p:not(.hide) {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
